@@ -41,8 +41,5 @@ $$
 Finding for given orthogonality final Equation for Linear Regression
 
 $$
-
 (X^TX^-1)X^Ty = \hat{\beta}
-
-
 $$

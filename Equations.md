@@ -21,7 +21,7 @@ Finding best line fit for given dataset, calculus route we minimize the sum of s
 _Linear Algebra way_ Finding approximation for error vector and compute the required weights
 
 $$
-X \{beta} = y
+X {\beta} = y
 $$
 
 $\beta$ is the slope and intercept for the given data weights
@@ -30,4 +30,19 @@ Error Vector Minimization
 
 $$
 E = y - X \hat\{\beta}
+$$
+
+Reducing Error Vector requires E vector to be orthogonal to the input vector
+
+$$
+X^Ty . E = 0
+$$
+
+Finding for given orthogonality final Equation for Linear Regression
+
+$$
+
+(X^TX^-1)X^Ty = \hat{\beta}
+
+
 $$

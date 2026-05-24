@@ -12,3 +12,17 @@ Key Features
 3. Probability Modeling
     - Core Statistical modeling
     - Probability Engine modeling
+
+## Project structure and working
+yantragya
+|
+|-build
+|  |-LinearRegression.py # simple linear regression unit
+|-vision
+|  |-visualization.py  # Making simple visual designs
+|-test
+  |-test.py
+|-main.py
+
+Making simple route for making linear model with simple dataset
+

@@ -5,6 +5,12 @@ Least square method
 
 import numpy as np
 
+'''
+With least square being the assumption that dataset could be made with ease of finding its inverse but its not always the case to find the inverse of the given matrix
+
+thus we go with finding with pseudo inverse
+'''
+
 
 def least_square(X, Y):
     """input : X,Y
@@ -19,3 +25,5 @@ def least_square(X, Y):
     final_weight = np.dot(inv, label_x)
 
     return final_weight
+
+

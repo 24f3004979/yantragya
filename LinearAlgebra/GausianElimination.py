@@ -57,7 +57,8 @@ def find_lead(matrix):
     print(f"We cant find lead with swaping and scalling and pivoting for given matrix")
 
 
-M = [[7,8],
-     [2,2]]
+M = [[7,8,3,1,2],
+     [2,2,4,3,1],
+     [4,7,9,1,3]]
 r = find_lead(M)
 print(r)

@@ -1,16 +1,12 @@
 """
 Least square method
     Find best curve fit for given dataset
+
+Least square breaks with working with floats or non-invertible matrices,
+    If the matrix is non-invertible then we wont be able to solve the matrix 
 """
 
 import numpy as np
-
-'''
-With least square being the assumption that dataset could be made with ease of finding its inverse but its not always the case to find the inverse of the given matrix
-
-thus we go with finding with pseudo inverse
-'''
-
 
 def least_square(X, Y):
     """input : X,Y

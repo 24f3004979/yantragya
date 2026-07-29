@@ -52,3 +52,5 @@ $$
    To give the final fit freedom of finding intercept since if we wont include it the final fit would be forced to pass from the origin of the plot, thus adding intercept makes it easy for the final fit and predictions.
 3. Orthogonal Vectors helps minimize
    > Geometrical explanation is required thus i would visualize it to understand how does actually orthogonal vector makes the difference.
+
+    Orthogonal vectors are required because, they show the minimum distance from the target point to the given plane, thus we use the orthogonal projections.

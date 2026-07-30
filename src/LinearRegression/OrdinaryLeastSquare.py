@@ -20,18 +20,29 @@ class OrdinaryLeastSquare:
         '''
         Making dataset ready for further comptation
         '''
-        if type(features) or type(target) == list:
-            features = np.array(features)
-            target = np.array(target)
+        feature, target = self.np_convert(features, target)
+
         self.features = features
         self.target = target
-        self.X = self.preprocess(features)
-        self.w = None # to train
+        self.X = self.preprocess(features)  # INFO: Taking feature into one more list :)
+        self.w = None
+
+    def np_convert(self, *args):
+        '''Simple conversion into tuples 
+        Dictionary might break this function with value error'''
+        print(args)
+
+        converted = [np.array(lst) for lst in args]
+        if len(args) == 1:
+            return converted[0]  # First Unit
+        return tuple(converted)  # Multiple Elements
 
     def preprocess(self, feature):
+        '''Conversion into numpy object is also required'''
+        feature = self.np_convert(feature)
         ones = np.ones((feature.shape[0], 1))
-        print(f"Horizontal Stacking unit : {ones}")
 
+        print(f"Stacking Pre-stage : {feature} with {ones} Type Inspection : {type(feature)} with {type(ones)} \n Feature shape : {feature.shape} with ones shape : {ones.shape}")
         stacked = np.hstack((ones, feature))
         print(f"Stacked Matrix : {stacked}")
         return stacked
@@ -43,13 +54,13 @@ class OrdinaryLeastSquare:
         '''
         try:
             if self.X.shape[0] != self.target.shape[0]:
-                raise ValueError(f"Shape Missmatch feature shape : {X.shape} with target : {self.target}")
+                raise ValueError(f"Shape Missmatch feature shape : {self.X.shape} with target : {self.target}")
             pseudo_inverse = np.linalg.pinv(self.X)
             self.w = pseudo_inverse @ y
             return self.w  # weights for given dataset
         except Exception as e:
             print(f"Terminating with Error {e}")
-            raise Exception("Training terminated with {e}")
+            raise Exception(f"Training terminated with {e}")
 
     def predict(self, new_data_point):
         if self.w is None:

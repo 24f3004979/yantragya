@@ -6,11 +6,14 @@ initiate simple noisy dataset for the linear regression testing
 - Build simple visualization tunel with the unit
 """
 from src.LinearRegression.OrdinaryLeastSquare import OrdinaryLeastSquare
-X = [1, 2, 3, 4, 5]
-Y = [1, 3, 2, 5, 4]
+import numpy as np 
+
+X = np.array([1, 2, 3, 4, 5])
+Y = np.array([1, 3, 2, 5, 4])
 
 print("Executing Ordinary least squares Method")
 
 model = OrdinaryLeastSquare(X,Y)
-
+w =model.train_weight()
+print(f" After training weights  : {w}")
 

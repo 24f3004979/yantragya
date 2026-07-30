@@ -5,19 +5,12 @@ initiate simple noisy dataset for the linear regression testing
 - test Linear regreession equation
 - Build simple visualization tunel with the unit
 """
-from src.LinearRegression import OLS
-import matplotlib.pyplot as plt
-
+from src.LinearRegression.OrdinaryLeastSquare import OrdinaryLeastSquare
 X = [1, 2, 3, 4, 5]
 Y = [1, 3, 2, 5, 4]
 
-# plot creation
-plt.plot(X, Y)
+print("Executing Ordinary least squares Method")
 
-plt.xlabel("data points")
-plt.ylabel("target labels")
-plt.title("Least square into action")
-
-plt.show()
+model = OrdinaryLeastSquare(X,Y)
 
 

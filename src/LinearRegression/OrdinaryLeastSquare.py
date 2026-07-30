@@ -17,9 +17,15 @@ class OrdinaryLeastSquare:
 
     '''
     def __init__(self, features, target):
+        '''
+        Making dataset ready for further comptation
+        '''
+        if type(features) or type(target) == list:
+            features = np.array(features)
+            target = np.array(target)
         self.features = features
         self.target = target
-        self.X = self.preprocess(feature)
+        self.X = self.preprocess(features)
         self.w = None # to train
 
     def preprocess(self, feature):

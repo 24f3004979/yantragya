@@ -19,13 +19,18 @@ class OrdinaryLeastSquare:
     def __init__(self, features, target):
         '''
         Making dataset ready for further comptation
-        '''
-        feature, target = self.np_convert(features, target)
 
-        self.features = features
-        self.target = target
+        Edit: Taking feature -> [feature] & target -> [target] | Now geting 5 X 5 as weight
+        feature and feature naming convention crash
+
+        reshaping fix into preprocessing could fix the downstream error
+        '''
+
+        features, target = self.np_convert(features, target)
+
         self.X = self.preprocess(features)  # INFO: Taking feature into one more list :)
         self.w = None
+        self.target = target
 
     def np_convert(self, *args):
         '''Simple conversion into tuples 
@@ -39,7 +44,18 @@ class OrdinaryLeastSquare:
 
     def preprocess(self, feature):
         '''Conversion into numpy object is also required'''
-        feature = self.np_convert(feature)
+        feature = np.asarray(feature)
+
+        if feature.ndim == 1:
+            feature = feature.reshape(-1, 1)
+            '''reshape-working
+                Here It simply makes given number list of shape (feature_count, )
+        With reshape(-1,1)
+        compute number of rows required for making data into one column
+
+            '''
+            print(f'Feature re-shape : {feature}')
+
         ones = np.ones((feature.shape[0], 1))
 
         print(f"Stacking Pre-stage : {feature} with {ones} Type Inspection : {type(feature)} with {type(ones)} \n Feature shape : {feature.shape} with ones shape : {ones.shape}")
@@ -56,7 +72,7 @@ class OrdinaryLeastSquare:
             if self.X.shape[0] != self.target.shape[0]:
                 raise ValueError(f"Shape Missmatch feature shape : {self.X.shape} with target : {self.target}")
             pseudo_inverse = np.linalg.pinv(self.X)
-            self.w = pseudo_inverse @ y
+            self.w = pseudo_inverse @ self.target
             return self.w  # weights for given dataset
         except Exception as e:
             print(f"Terminating with Error {e}")
@@ -67,5 +83,4 @@ class OrdinaryLeastSquare:
             raise RuntimeError("Weights Not trained for predictions")
         new_X = self.preprocess(new_data_point)
         return new_X @ self.w
-
 

@@ -20,3 +20,10 @@ Initiation Isssues with simple convertion into numpy array for further computati
 ### Root problems
 No iteration of logic, initiation was breaking due to self carelessness, of converting the feature then loading raw list again :P 
 Making object oriented miss-conception with non-defined values of y lying into training function
+        self.target = target
+
+## Shape Issue resolved
+numpy shapes treats, list of number as one dimensional vector, with shape being (n,) thus it didnt worked with the rest of the module 
+Solution : reshape function with (-1,1) being the value, which makes the given vector converted into one single vecotor with one column, -1 says to compute the row required for the given column, reshape, 
+
+learning : we should be mind full about shapes of the data points moving within the defined space, weather it goes wrong or into right space

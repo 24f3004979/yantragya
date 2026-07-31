@@ -29,3 +29,7 @@ Solution : reshape function with (-1,1) being the value, which makes the given v
 learning : we should be mind full about shapes of the data points moving within the defined space, weather it goes wrong or into right space
 
 ---- Implementing Simple visualization tool for modules ---
+Visualization tool is implemented with being a wrapper for the matplotlib
+
+---- training error with some wrong computation or core alogorithm being wrong---
+Core algorithm giving weights are inconsistent with the data set , making some concern about the total training part

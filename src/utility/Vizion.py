@@ -53,15 +53,22 @@ class VizionGraph:
         Issues
             + Model is not working | since prediction line is broken
             + Visualization part is also not working fine
+
+        with first and last points predictions work somehow ?
+        How really which is the prediction part ? what is really that prediction line which we talk abouut ?
         '''
         simple_data_points = model.features
         predictions = []
-        for i in simple_data_points:
-            print('Making predictions with the data point : ', i)
-            p = model.predict([i])
-            print(f"Prediction Computed for the point {i} is : {p}")
-            predictions.append(p)
-        self.ax.plot(predictions, color='red')  # Final Plt about predictions 
+        # Taking first and last for the predictions
+        first = simple_data_points[0]
+        last = simple_data_points[len(simple_data_points) - 1]
+
+
+        p1 = model.predict([first])
+        p2 = model.predict([last])
+        preds = [p1, p2]
+        base = [first, last]
+        self.ax.plot(base, preds)
 
     def render(self):
         plt.title(self.title)

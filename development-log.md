@@ -33,3 +33,7 @@ Visualization tool is implemented with being a wrapper for the matplotlib
 
 ---- training error with some wrong computation or core alogorithm being wrong---
 Core algorithm giving weights are inconsistent with the data set , making some concern about the total training part
+
+Q : How does the prediction with taking first and last point works ? 
+    How really does the prediction works with the modle ? 
+    How to validate the model with the predictions ?

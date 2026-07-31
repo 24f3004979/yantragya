@@ -1,28 +1,47 @@
 # yantragya
 Making simple Machine Learning Library to explore implementation of mathematics and programming into play.
 
-Key Features
-1. Linear Regression
-    + Linear Algebra
-    + mathematical modeling
-    + Solving and Algebra algorithm
-    + Execution modeling for core mathematics
-2. Clasification units
-    - Prebuilt tools abstraction unit
-3. Probability Modeling
-    - Core Statistical modeling
-    - Probability Engine modeling
+## Key Features
+1. Linear Regression Module
+    + OLS
+
+2. Utilities
+    + Graph tool
+    + file handler
 
 ## Project structure and working
+```
 yantragya
-|
-|-build
-|  |-LinearRegression.py # simple linear regression unit
-|-vision
-|  |-visualization.py  # Making simple visual designs
-|-test
-  |-test.py
-|-main.py
+.
+├── development-log.md
+├── docs
+│   ├── Equations.md
+│   └── linear-regression.md
+├── experiments
+│   ├── GausianElimination.py
+│   └── ploting_test.py
+├── NoteBooks
+│   └── LinearRegressionTesting.ipynb
+├── README.md
+├── requirements.txt
+├── src
+│   ├── __init__.py
+│   ├── LinearRegression
+│   │   ├── __init__.py
+│   │   └── OrdinaryLeastSquare.py
+│   └── utility
+│       ├── CsvLoader.py
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── CsvLoader.cpython-312.pyc
+│       │   ├── __init__.cpython-312.pyc
+│       │   └── Vizion.cpython-312.pyc
+│       └── Vizion.py
+├── tests
+│   ├── __init__.py
+│   ├── test_data.csv
+│   ├── test_data.py
+│   └── test_least_square.py
+└── todo.md
 
-Making simple route for making linear model with simple dataset
-
+```

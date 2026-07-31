@@ -44,21 +44,24 @@ class VizionGraph:
         self.ax.scatter(x,y, color=color, alpha=0.6)
         return self
 
-    def line_plot(self, weights, dat_matrix):
+    def line_plot(self, weights, model):
         '''
-        Simple line plot with weights
-        Testing to make predictions with iterating all points to generate prediction plot
-        '''
-        preds = []
-        for _ in dat_matrix:
-            d = _[1]
-            slope = weights[0]
-            p = slope * d + weights[1]  # Line equation output
-            print(f"Prediction : {p}")
-            preds.append(p)
-        print(f"Predictions : {preds}")
-        self.ax.plot(preds) # Made plot for predictions
+        Using Existing Prediction function from model to plot the dataset
 
+        BUG: Either the core working for building modle is broken
+        Loading for prediction pipeline in Broken
+        Issues
+            + Model is not working | since prediction line is broken
+            + Visualization part is also not working fine
+        '''
+        simple_data_points = model.features
+        predictions = []
+        for i in simple_data_points:
+            print('Making predictions with the data point : ', i)
+            p = model.predict([i])
+            print(f"Prediction Computed for the point {i} is : {p}")
+            predictions.append(p)
+        self.ax.plot(predictions, color='red')  # Final Plt about predictions 
 
     def render(self):
         plt.title(self.title)

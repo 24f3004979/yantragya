@@ -27,6 +27,7 @@ class OrdinaryLeastSquare:
         '''
 
         features, target = self.np_convert(features, target)
+        self.features = features  # Features defined
 
         self.X = self.preprocess(features)  # INFO: Taking feature into one more list :)
         self.w = None
@@ -72,6 +73,8 @@ class OrdinaryLeastSquare:
             if self.X.shape[0] != self.target.shape[0]:
                 raise ValueError(f"Shape Missmatch feature shape : {self.X.shape} with target : {self.target}")
             pseudo_inverse = np.linalg.pinv(self.X)
+
+            print(f'Intermediate Pseudo Inverse : {pseudo_inverse}')
             self.w = pseudo_inverse @ self.target
             return self.w  # weights for given dataset
         except Exception as e:

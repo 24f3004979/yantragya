@@ -27,3 +27,5 @@ numpy shapes treats, list of number as one dimensional vector, with shape being 
 Solution : reshape function with (-1,1) being the value, which makes the given vector converted into one single vecotor with one column, -1 says to compute the row required for the given column, reshape, 
 
 learning : we should be mind full about shapes of the data points moving within the defined space, weather it goes wrong or into right space
+
+---- Implementing Simple visualization tool for modules ---

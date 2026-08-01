@@ -7,6 +7,30 @@ We project target vector to feature space, to get the best representation of tar
 
 Video Demonstration for given concept : []  # upcomming :)
 
+
+### Mathematical Limmitations for OLS method
+We cant run this algorithm for big data : Matrix computations are costly
+Our working prototype also terminates to compute weights somehow :) | BUG reported
+
++ Extream Overfitting
+    If with higher dimension it works then it would overfit with dataset
+
+    **High Dimensional Linear modeling is extream fit** : Hyper planes
+    with increased number of features then data points, Linear model becomes free with dimensions and could get into situation of representing all data points exactly | Overfiting
+
+#### Unformal mathematical proof of overfiting with high dimensional dataset
+
+with more features, then number of points, the feature space would span the whole n dimensional space, thus we would get exact fit with the feature vectors for the target vector with no projection this model wont work well with new dataset
+
++  No uniqueness
+    Inverse method picks best minimizing weights with not structure
+
+Fixes Possibility
++ Running PCA beforehand for compressed representation for the high dimentional dataset
++ Lasso + ridge regression methods for constraints for over fit
+
+
+
 ## Project Implementation details about OLS
 
 [updated : 1/Aug/2026]
@@ -24,7 +48,7 @@ Breif workflow ~
 + model : Using simple numpy computations computes the weights and initiates predictions
 
 
-### KNOWN LIMMITATIONS AND PROBLEMS
+### KNOWN LIMMITATIONS AND PROBLEMS - CODE BASE SPECIFIC
 + With Loaded dataset of big size : weight comes as Nan
 + Non-predictive workflow about module : logs required for the working
 + training crashes or stops without warning and traces :)

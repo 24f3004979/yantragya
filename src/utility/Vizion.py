@@ -60,6 +60,9 @@ class VizionGraph:
 
         -- SORT BEFORE PLOT FIX ---
         Sort out the dataset before ploting with raw x being loaded here
+
+    ** Important **
+    VIZION PLUGINS ARE NOT USED IN PROJECT FOR NOW | SOON WOULD BE MADE TILL THEN LOCAL PLOTS ARE USED
         '''
         simple_data_points = np.array(model.features)
         predictions = []

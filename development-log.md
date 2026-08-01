@@ -37,3 +37,6 @@ Core algorithm giving weights are inconsistent with the data set , making some c
 Q : How does the prediction with taking first and last point works ? 
     How really does the prediction works with the modle ? 
     How to validate the model with the predictions ?
+
+--- Needs debug for the data flow
+++ Visualization pipeline is not working as intended

@@ -41,7 +41,8 @@ class VizionGraph:
         self.title = title
 
     def data_plot(self,x,y, label="Training Data", color="darkblue"):
-        self.ax.scatter(x,y, color=color, alpha=0.6)
+        self.ax.scatter(x,y, color=color) # Ambiguous about ploting the dataset
+        print(f"dataset ploted ")
         return self
 
     def line_plot(self, weights, model):
@@ -56,19 +57,19 @@ class VizionGraph:
 
         with first and last points predictions work somehow ?
         How really which is the prediction part ? what is really that prediction line which we talk abouut ?
+
+        -- SORT BEFORE PLOT FIX ---
+        Sort out the dataset before ploting with raw x being loaded here
         '''
-        simple_data_points = model.features
+        simple_data_points = np.array(model.features)
         predictions = []
-        # Taking first and last for the predictions
-        first = simple_data_points[0]
-        last = simple_data_points[len(simple_data_points) - 1]
 
+        # Prediction with one shot
+        for i in simple_data_points:
+            p = model.predict([i])
+            predictions.append(i)
+        self.ax.plot(simple_data_points, predictions, color='red', label='-FIT-')
 
-        p1 = model.predict([first])
-        p2 = model.predict([last])
-        preds = [p1, p2]
-        base = [first, last]
-        self.ax.plot(base, preds)
 
     def render(self):
         plt.title(self.title)

@@ -1,5 +1,4 @@
-"""
-Making simple data load for Linear regression model
+"""Making simple data load for Linear regression model
 
 initiate simple noisy dataset for the linear regression testing
 - test Linear regreession equation
@@ -22,6 +21,5 @@ model = OrdinaryLeastSquare(X,Y)
 
 
 w =model.train_weight()  # training weight
-print(f" After training weights  : {w}")
 graph.line_plot(w,model)
 graph.render()

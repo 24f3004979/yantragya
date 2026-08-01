@@ -36,7 +36,6 @@ class OrdinaryLeastSquare:
     def np_convert(self, *args):
         '''Simple conversion into tuples 
         Dictionary might break this function with value error'''
-        print(args)
 
         converted = [np.array(lst) for lst in args]
         if len(args) == 1:
@@ -55,13 +54,10 @@ class OrdinaryLeastSquare:
         compute number of rows required for making data into one column
 
             '''
-            print(f'Feature re-shape : {feature}')
 
         ones = np.ones((feature.shape[0], 1))
 
-        print(f"Stacking Pre-stage : {feature} with {ones} Type Inspection : {type(feature)} with {type(ones)} \n Feature shape : {feature.shape} with ones shape : {ones.shape}")
         stacked = np.hstack((ones, feature))
-        print(f"Stacked Matrix : {stacked}")
         return stacked
 
     def train_weight(self):
@@ -74,11 +70,9 @@ class OrdinaryLeastSquare:
                 raise ValueError(f"Shape Missmatch feature shape : {self.X.shape} with target : {self.target}")
             pseudo_inverse = np.linalg.pinv(self.X)
 
-            print(f'Intermediate Pseudo Inverse : {pseudo_inverse}')
             self.w = pseudo_inverse @ self.target
             return self.w  # weights for given dataset
         except Exception as e:
-            print(f"Terminating with Error {e}")
             raise Exception(f"Training terminated with {e}")
 
     def predict(self, new_data_point):

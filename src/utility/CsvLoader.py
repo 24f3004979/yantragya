@@ -34,18 +34,25 @@ class CSVHandle:
         print(f"Data set loaded into pandas")
         
         # Core essentials :)
-        X = df.drop(columns=[self.target])
+        X = df["X"] # | df.drop(columns=[self.target]) | Making problem of picking leading as the point
         y = df[self.target]
         
 
         # Numpy conversion
         X = X.to_numpy(dtype=float)
-        X = y.to_numpy(dtype=float)
+        y = y.to_numpy(dtype=float)
 
-        print(f"Numpy conversion completed")
 
         if X.shape[0] != y.shape[0]:
             raise ValueError("Shape Missmatch | Terminating Process")
-        print(f"Final Data : {X} with {y}")
+
+        print(f"""
+        CSV LOADER INFORMATION
+        training points  : { [_ for _ in X] } with {type(X)}
+        label points : { [_ for _ in y] } with {type(y)}
+              """)
+
+        # FIX : Pandas Grabing function was making problem with loading dataset for training
+
         return (X,y)  # Final Feature and target values
 

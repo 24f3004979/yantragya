@@ -7,19 +7,28 @@ initiate simple noisy dataset for the linear regression testing
 from src.LinearRegression.OrdinaryLeastSquare import OrdinaryLeastSquare
 
 from src.utility.CsvLoader import CSVHandle
-from src.utility.Vizion import VizionGraph
 import numpy as np 
+from src.utility.Vizion import VizionGraph
+
+import matplotlib.pyplot as plt
+
 
 
 
 X,Y = CSVHandle('/home/madhav/workspace/projects/yantragya/tests/test_data.csv', "y").load()
 
-graph = VizionGraph()
-graph.data_plot(X,Y)
-
+plt.scatter(X,Y)
 model = OrdinaryLeastSquare(X,Y)
+model.train_weight()
+w = model.train_weight()  # training weight
 
+# Simple prediction flow
+preds = []
+for i in model.features:
+    p = model.predict([i])
+    preds.append(p)
 
-w =model.train_weight()  # training weight
-graph.line_plot(w,model)
-graph.render()
+print(f"With Weigtht : {w}")
+plt.plot(model.features, preds, label='Model Predictions', color='red')
+plt.show()
+

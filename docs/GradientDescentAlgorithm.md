@@ -4,7 +4,7 @@
 
 <style>
   body, p, h1, h2, h3, h4, h5, h6, li, code {
-    font-family: 'JetBrains Mono', monospace !important
+    font-family: 'JetBrains Mono'
   }
 </style>
 

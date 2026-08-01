@@ -28,7 +28,8 @@ for i in model.features:
     p = model.predict([i])
     preds.append(p)
 
-print(f"With Weigtht : {w}")
+print(f"With Weigtht : {model.w}")
+print(f"Prediction Status : {preds}")
 plt.plot(model.features, preds, label='Model Predictions', color='red')
 plt.show()
 

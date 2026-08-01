@@ -28,6 +28,7 @@ class CSVHandle:
         early terminations with such conditions
         '''
         df = pd.read_csv(self.file_path)
+        df.dropna()
         # target check
         if self.target not in df.columns:
             raise ValueError("Target Not found in Dataset | Terminating process")
@@ -37,21 +38,16 @@ class CSVHandle:
         X = df["X"] # | df.drop(columns=[self.target]) | Making problem of picking leading as the point
         y = df[self.target]
         
-
         # Numpy conversion
         X = X.to_numpy(dtype=float)
         y = y.to_numpy(dtype=float)
 
 
+
         if X.shape[0] != y.shape[0]:
             raise ValueError("Shape Missmatch | Terminating Process")
 
-        print(f"""
-        CSV LOADER INFORMATION
-        training points  : { [_ for _ in X] } with {type(X)}
-        label points : { [_ for _ in y] } with {type(y)}
-              """)
-
+        print(f"Data Points : {len(X)} with lable : {len(y)} | one elem : {X[0]} with y element : {y[0]}")
         # FIX : Pandas Grabing function was making problem with loading dataset for training
 
         return (X,y)  # Final Feature and target values

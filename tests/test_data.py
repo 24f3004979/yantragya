@@ -19,10 +19,12 @@ import matplotlib.pyplot as plt
 
 X,Y = CSVHandle('/home/madhav/workspace/projects/yantragya/linear_regress.csv', "y").load()
 
+training_data = {
+        "X" : X,
+        "y" : Y
+        } # json :)
+
 seed_weight = [3,3]
-gradient_model = GradientDescent(X, seed_weight)
+gradient_model = GradientDescent(training_data, seed_weight)
 p = gradient_model.y_cap(seed_weight)
-
-for _ in p:
-    print(f"Prediction Computed number : {_}")
-
+gradient_model.train(10, 0.2)

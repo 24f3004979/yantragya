@@ -41,7 +41,7 @@ $$
 with chain rule with nested such function first we take derivate of outer function and multiply with inner function and then take derivative of inner function and multiply it with other function
 
 $$
-\sum_i^n \frac{1}{n} 2(wx_i-y_i)x_i
+\sum_i^n \frac{1}{n} 2(wx_i-y_i)X
 $$
 
 **Gradient Descent Core formula** ♥️

@@ -9,6 +9,7 @@ Approach
 3. update logic with each iteration
 '''
 import numpy as np
+import pandas as pd
 
 # Preprocessing function imported from ordinary least square | Needs shift into utlility kit for usage
 def preprocess(feature):
@@ -54,12 +55,14 @@ class GradientDescent:
                     x = preprocess(x) # Now this should work :=)
                     print(f"Shape inspection with values : {x.shape} {x} with weight : {self.weight} with shape: {self.weight.shape}")
                     cap_y = x @ self.weight
-                    print(f"Computed prediction : {cap_y}")
-                    predictions.append(cap_y)  # Final Prediction bundle
+                    print(f"Computed prediction : {cap_y.flatten()[0]}")
+                    predictions.append(cap_y.flatten()[0])  # CRITICAL : due to matrix multiplication index used
                 except Exception as  e:
                     print(f"Computing cap_y terminated with :{x} with {self.weight} {e}")
                     raise Exception(f"Terminating y_cap computation for graident ignition")
-        return predictions
+        # Shape fixes
+        predictions = np.array(predictions)
+        return predictions.reshape(-1,1)
 
     def get_batch(self, array, batch_size=100):
         for i in range(0, len(array), batch_size):
@@ -67,20 +70,15 @@ class GradientDescent:
             yield x_data
 
     def train(self, epochs, neta):
-
-        '''
-        Running a Loop for epotch for training the weight with gradient based update
-        neta : hyper parameter for the adjustment :)
-        epotch: Convergence limit
-        '''
+        weight = self.weight # Initial starting weights
         for epoch in range(epochs):
-            predictions = self.y_cap(self.weight)
-            diff = predictions - self.y
-            loss = np.mean(diff ** 2)
-            print(f"Gradient Inspection : {self.training_dataset.shape} with y :{self.y.shape} with diff {diff.shape}")
-            gradient = (2 / len(self.y)) * self.training_dataset.T @ diff
+            pred = self.y_cap(weight)
+            dif = (pred - self.y) # Difference vector for given weight
 
-            print(f"computed : {gradient}")
-            self.weight -= neta * gradient
+            product = self.training_dataset.T @ dif # Matrix multiplication
+            product = product.flatten()[0]
+            gradient = (2/self.training_dataset.size) * product
 
-            print(f"Epoch {epoch}, Loss = {loss}")
+            weight = weight - neta * gradient
+            print(f"Epotch {epoch} with Loss value : {np.average(dif)}")
+        print(f'Final Weight computed : {weight} with loss {np.average(dif)}')

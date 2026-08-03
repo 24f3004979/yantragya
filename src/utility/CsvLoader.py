@@ -37,6 +37,7 @@ class CSVHandle:
         # Core essentials :)
         X = df["X"] # | df.drop(columns=[self.target]) | Making problem of picking leading as the point
         y = df[self.target]
+        y = y.fillna(0)
         
         # Numpy conversion
         X = X.to_numpy(dtype=float)

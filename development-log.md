@@ -40,3 +40,16 @@ Q : How does the prediction with taking first and last point works ?
 
 --- Needs debug for the data flow
 ++ Visualization pipeline is not working as intended
+
+---
+
+# Gradient Descent Implementation
+Made a whole day debuging the flow with gradient descent algorithm, geting nan at results with using computing of umpy to compute the final weights,
+
+Inspected the whole pipeline about where things are geting wrong, laid out with clarity about the shapes and flow of numbers, then things started working
+
+**Numpy extractions are also reqired : currently i have made flatten() function based extraction from its array capsule like [[]] after matrix multipication, need to learn to make good flow with numpy
+
+Then final fix was to either fill y with 0 in place of nan , or remove them , to save the shape chaos i simply replaced the y with 0 at all nan places, and thing started working
+
+Now i would try to verify its working with real library working about the same problem 

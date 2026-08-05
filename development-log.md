@@ -53,3 +53,11 @@ Inspected the whole pipeline about where things are geting wrong, laid out with 
 Then final fix was to either fill y with 0 in place of nan , or remove them , to save the shape chaos i simply replaced the y with 0 at all nan places, and thing started working
 
 Now i would try to verify its working with real library working about the same problem 
+
+---
+# Refactor : [5| august | 2026]
+Targets to refactor into code base
+1. Making structured documentation - rewriting into readable, and structured way
+2. Dedicated componenets requried in all core componenets | Too much responsibility at once loaded
+3. Loging inspection requried into the  main workflow with testing units | since shapes and flow makes non expected crashes
+4. Breakdown of core componenets and planed mvp componenets requrired for the working

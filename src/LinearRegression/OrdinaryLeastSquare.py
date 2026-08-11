@@ -1,6 +1,13 @@
 '''
 Implementing simple Linear regression
 with simple pythonic implementation of pseudo inverse form
+
+Formula is modeled with code | no guarding for big dataset | thus be carefull to call for big dataset
+OLS is also not verified for its predictions and its calculation flow currently
+
+Requried fixes
+1. Saving boundaries for dataset loading for training 
+2. Validation with big dataset
 '''
 
 import numpy as np

@@ -1,13 +1,18 @@
-# yantragya
+# yantragya v 0.1
 Making simple Machine Learning Library to explore implementation of mathematics and programming into play.
 
 ## Key Features
 1. Linear Regression Module
     + OLS
+    + Gradient Descent
 
 2. Utilities
     + Graph tool
     + file handler
+3. testing suite
+    + synthetic data generators
+    + testing data repository
+    + testing setup scripts
 
 ## Project structure and working
 ```

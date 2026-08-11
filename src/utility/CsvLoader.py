@@ -1,7 +1,19 @@
 '''
 CSV file Loading Module
+very simple loader utility | Does not does good things to data to be that usefull
+
+Needs scope clarity about what to implement with this module
+Currently not used for the core workflow
+Needs refactor for being assured about what it does and where it breaks with grace
+
+Needed Featuring
+1. Optimization with loading big dataset
+    Dedicated pipeline to feature big  dataset loading without memory crash
+
+    requires initial inspection module with defined loading pipeline with cleaning utility fucntion
 
 Early termination if Dataset is not ready for operation
+
 '''
 import pandas as pd 
 import numpy as np 

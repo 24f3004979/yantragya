@@ -57,7 +57,23 @@ Now i would try to verify its working with real library working about the same p
 ---
 # Refactor : [5| august | 2026]
 Targets to refactor into code base
-1. Making structured documentation - rewriting into readable, and structured way
-2. Dedicated componenets requried in all core componenets | Too much responsibility at once loaded
-3. Loging inspection requried into the  main workflow with testing units | since shapes and flow makes non expected crashes
-4. Breakdown of core componenets and planed mvp componenets requrired for the working
+1. Making structured documentation - rewriting into readable, and structured way [ Made foundational documentation corrections to all components and now needs written plan and documentation strategy to approach other components design]
+2. Dedicated componenets requried in all core componenets | Too much responsibility at once loaded [
+initial planing is into action for making responsibility allocations for all modules and unit
+]
+3. Loging inspection requried into the  main workflow with testing units | since shapes and flow makes non expected crashes [ Simple loger would be soon loaded into root folder]
+4. Breakdown of core componenets and planed mvp componenets requrired for the working 
+
+------
+kernel Initialization command required usefull thing
+```
+python -m ipykernel install --user --name=kernel --display-name="kernel-core"
+```
+Dated : 11 august 2026
+Defined plan with documentation required for the master project flow 
+Goals | Scope | Designed components | research documentations
+
+### Notes from exploration
+Currently we require reading materials study about the topics, implementation clarity is missing for all designs currently made, thus we need good plan with refinements and learning from current implementation with structure about controlled experimentation, to achive goals
+
+

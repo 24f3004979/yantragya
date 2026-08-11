@@ -7,6 +7,20 @@ Approach
     + computing y cap with seed weights for all training dataset
 2. Gradient computation with respect to prediction
 3. update logic with each iteration
+
+---
+# Implementation Documentation
+current situation : it works, just works
+
+Needs refinement about documenting each module working for and its use case into well documented plan for the given module to work, Thus no scalling or edits could be made precise into current situation
+
+Problems
+1. I am not clear about steps used into making this algorithm
+2. No clarity about how really things are working with given  module
+3. Data flow is not explained well thus can't get upgrade
+4. No tests are currently made thus easy breakdown at load
+
+Danger : Its not tested with good amount of dataset, and un-clear implementation makes it real danger to run with real big dataset, this would break and could crash pc also
 '''
 import numpy as np
 import pandas as pd

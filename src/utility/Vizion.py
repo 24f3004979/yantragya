@@ -1,4 +1,7 @@
 '''
+
+ABANDONED UNIT : NOT IN USE FOR NOW NEEDS REFACTOR AND DOCUMENTATION WITH DEFINED GOALS AND WORKING
+
 Simple Visualization tool for all units, working as simple visualization plugin
 
 Making layered visuals with explanation log and descriptive images

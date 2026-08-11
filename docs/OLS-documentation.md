@@ -47,7 +47,6 @@ Breif workflow ~
 + CSV_Loader : made for basic preprocessing and checks the data file for early termination or loads into columns for down-streams
 + model : Using simple numpy computations computes the weights and initiates predictions
 
-
 ### KNOWN LIMMITATIONS AND PROBLEMS - CODE BASE SPECIFIC
 + With Loaded dataset of big size : weight comes as Nan
 + Non-predictive workflow about module : logs required for the working

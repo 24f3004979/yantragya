@@ -1,2 +1,2 @@
 from tests.test_data import *
-print('Hello yantragya')
+print('Yantragya Version 0.1 [ Under Development ]')

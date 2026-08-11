@@ -1,6 +1,4 @@
 # TODO
-1. Loading dataset
-    Making batch based | Making variations with loading dataset,
-    simple loading differences into Linear regression way and gradient descent way makes difference
-2. Implementing simple pathway for training the weights
-3. Evaluation Metrices implementation
+1. Research and refinement about direction of project needs to be documented
+2. calrity about each component and dedicated design about all component build
+3. clear documented implementation of all components

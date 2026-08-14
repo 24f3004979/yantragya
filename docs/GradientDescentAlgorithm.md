@@ -31,10 +31,10 @@ chain rule implemented here 🔖
 > we simply took derivative of internal function and wrote final product
 
 $$
-\begin(align)
+\begin{align}
     L = (w^TX - y)^2 \\
     & = 2(w^T - y).X
-\end(align)
+\end{align}
 $$
 
 Differentiated function

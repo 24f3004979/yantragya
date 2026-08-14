@@ -14,6 +14,8 @@ Making simple Machine Learning Library to explore implementation of mathematics 
     + testing data repository
     + testing setup scripts
 
+![project-screenshot](project.png)
+
 ## Project structure and working
 ```
 yantragya

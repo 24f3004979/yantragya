@@ -76,4 +76,24 @@ Goals | Scope | Designed components | research documentations
 ### Notes from exploration
 Currently we require reading materials study about the topics, implementation clarity is missing for all designs currently made, thus we need good plan with refinements and learning from current implementation with structure about controlled experimentation, to achive goals
 
+-----
+## Learning targets must required
+1. Solid understanding and visualization view for the core algorithms
+2. Mathematical foundations with calculus | Probability | Linear Algebra is must required
+3. Implementation clarity with documented steps about each step with well loged working mechanism
+
+---
+
+## Current  Improvement requriements
+- Understanding of matrix view of linear regression models
+    + Made foundational derivative approaches in Linear regression
+    + requried understanding to make new derivatives for pca + regression pipeline
+- Log Likelihood and probabilisitc modeling of dataset
+    + Needs a dedicated module into the code base
+- Distribution understanding
+    + Thinking in terms of models
+    + Seeing distributions hands on
+    + Finding hyper parameters for the underlying distribution
+    + Writing formal proff about the core distritbution formulas
+
 

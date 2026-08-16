@@ -52,3 +52,8 @@ yantragya
 └── todo.md
 
 ```
+
+### Future Upgrade goals
++ Making custom computational core with cpp
++ Web client with all modules available with nodes and elements to craft with
++ Simplified dedicated data processor and extractor plugins dedicated for real time data analytics and working pipeline

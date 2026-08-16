@@ -5,7 +5,7 @@ With limmitations of least square to find best weights, if data matrix is non-in
 ## A bit of understanding for the OLS model
 We project target vector to feature space, to get the best representation of target vector from the feature space, Projection is linear combination of feature space spanning vectors.
 
-![Video Demonstration](https://youtu.be/iOsGqscrVGI?si=UOi4bBNGBalVexcz)
+[Video Demonstration](https://youtu.be/iOsGqscrVGI?si=UOi4bBNGBalVexcz)
 
 # FIT
 

@@ -96,4 +96,13 @@ Currently we require reading materials study about the topics, implementation cl
     + Finding hyper parameters for the underlying distribution
     + Writing formal proff about the core distritbution formulas
 
+-----
+
+## Representational Learning Hands on
+Dated [17-August-2026]
+Making hands on implementation for PCA utility for dataset.
+Learning its actual fit into the whole picture and documenting the journey
+
+What i Learned with PCA utility
+
 

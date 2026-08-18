@@ -35,7 +35,6 @@ rank eigen vectors and pick k-dimensional matrix
 project data point into new dimension > train the new pca driven model
 
 For new points
-muust use original mean from training dataset > dependency link
+must use original mean from training dataset > dependency link
 project into pca space -> Make predictions
-
 

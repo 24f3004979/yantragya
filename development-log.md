@@ -103,6 +103,8 @@ Dated [17-August-2026]
 Making hands on implementation for PCA utility for dataset.
 Learning its actual fit into the whole picture and documenting the journey
 
-What i Learned with PCA utility
+Completed with PCA working regression workflow, geting near perfect model for prediction with 3d dataset with just 2d points to plot the dataset, 
+
+Reduced original dimension but still got good visual out which shows the importance of the PCA implementation with regression
 
 

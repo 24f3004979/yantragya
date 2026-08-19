@@ -8,6 +8,8 @@ OLS is also not verified for its predictions and its calculation flow currently
 Requried fixes
 1. Saving boundaries for dataset loading for training 
 2. Validation with big dataset
+
+This for now cant handle high dimensional dataset :)
 '''
 
 import numpy as np
@@ -36,9 +38,10 @@ class OrdinaryLeastSquare:
         features, target = self.np_convert(features, target)
         self.features = features  # Features defined
 
-        self.X = self.preprocess(features)  # INFO: Taking feature into one more list :)
+        # self.X = self.preprocess(features)  # INFO: needs to be selective
         self.w = None
         self.target = target
+        self.X = features
 
     def np_convert(self, *args):
         '''Simple conversion into tuples 
@@ -89,6 +92,6 @@ class OrdinaryLeastSquare:
     def predict(self, new_data_point):
         if self.w is None:
             raise RuntimeError("Weights Not trained for predictions")
-        new_X = self.preprocess(new_data_point)
-        return new_X @ self.w
+        # new_X = self.preprocess(new_data_point)  # Making change with taking the predictions
+        return new_data_point @ self.w
 

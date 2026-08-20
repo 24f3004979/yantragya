@@ -4,6 +4,7 @@ if [ "$#" -ne 2 ]; then
   exit 1
 fi
 
+
 schema_file=$1
 input_file=$2
 

@@ -107,4 +107,14 @@ Completed with PCA working regression workflow, geting near perfect model for pr
 
 Reduced original dimension but still got good visual out which shows the importance of the PCA implementation with regression
 
+---- 
+### Moduler Development
+Making moduler usable peice of componenets with documented working mechanism for building the ultimate core software which we aimed with all research which is completed till now.
 
+With previous implementations and experiments now we can proceed with making working units and componenets for different needs of the project, building componenets which could be used to craft models with ease, yantragya a place to craft intellegence from the model.
+
+Component clariy
+    1. Data loader
+    2. Visualization unit
+    3. Defined models
+    4. prediction and validation units

@@ -12,10 +12,11 @@ fi
 INPUT_FILE="$1"
 OUTPUT_FILE="$2"
 
-sed -e 's/\r//g' \  # removes carrage return
-    -e 's/^[ \t]*//; s/[ \t]*$//' \ # tabs and space normalization
-    -e 's/;/,/g' \  #comma substitution
-    -e '/^$/d' \ # removing empty lines
+sed -e 's/\r//g' \
+    -e 's/^[ \t]*//; s/[ \t]*$//' \
+    -e 's/;/,/g' \
+    -e '/^$/d' \
+    -e 's/ //g' \
     "$INPUT_FILE" > "$OUTPUT_FILE"
 
 # 2. Validation Check: Ensure the clean file actually contains data

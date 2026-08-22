@@ -118,3 +118,8 @@ Component clariy
     2. Visualization unit
     3. Defined models
     4. prediction and validation units
+
+---- 
+Stoping vizion and predata preprocessing extensive tools would make them after we complete core ML algorithm implementation and collect there extensive usecase in project
+
+since Projecting with these all tools would require different approaches and more broader view about there implementation, we would straight go with making core ML algorithms and document requirements and roadmap for making preprocessing engines and visualization tools.

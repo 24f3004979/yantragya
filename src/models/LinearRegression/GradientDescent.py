@@ -9,20 +9,21 @@ class GradientDescent:
         sample = X.shape[0] # number of elems
         ones_column = np.ones((sample, 1))
         self.X = np.hstack([ones_column, X])
-        self.y = y
+        self.y = y.reshape(-1,1)
 
-        self.weight = None
-    
-    def train(self, initiating_weight, epotches=100, batch_size=100, eta=0.01):
+            
+    def train(self, initiating_weight, epotches=10, batch_size=100, eta=0.0001):
         '''
         Training Prediction with batch based approach
         Now geting nan in between
         '''
         
         n = self.X.shape[0] # total data point
-        self.weight = initiating_weight
+        weight = initiating_weight.reshape(-1,1)  # weight vectorized
 
-        self.weight = self.weight.reshape(-1,1)
+        er = []
+        ep = []
+        iteration = 0
 
         for epotch in range(epotches):
 
@@ -38,22 +39,28 @@ class GradientDescent:
                 
                 print(f"Current batch size: {x.shape[0]}")
                 batch = x.shape[0]
-                pred = x.dot(self.weight)
-                err = pred - y
+                pred = (x).dot(weight)
+                print(pred)
+                print(f"Predictions being zero :)")
+                err = (pred - y)
+                print(f"Intermediate error for intermediate prediction : {err}")
 
                 gradient = (2.0 / batch) * np.dot(x.T, err)
 
                 # regularization required here :)
-
-                self.weight = self.weight - (eta * gradient)
+                print(f'gradient intermediate computation :{(eta * gradient)}')
+                weight = weight - (eta * gradient)
                 
-                print(f'computed weight : {self.weight} batch {i}')
+                pred = weight.T * self.X
+                err = (np.sum((pred - self.y.reshape(-1,1))**2) / len(self.X))
 
-        pred = self.weight.T * self.X
-        err = (np.sum((pred - self.y)**2) / len(self.X))
+                ep.append(iteration)
+                er.append(err)
+                print(f"Adding information for error visualization : {err} with {iteration} round")
+                iteration += 1
         
-        print(f'Epotch : {epotch} with sse : {err}')
-        return self.weight
+            print(f'Epotch : {epotch} with sse : {err}')
+        return weight, er, ep
 
 
 

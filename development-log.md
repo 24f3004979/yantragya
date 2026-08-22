@@ -123,3 +123,15 @@ Component clariy
 Stoping vizion and predata preprocessing extensive tools would make them after we complete core ML algorithm implementation and collect there extensive usecase in project
 
 since Projecting with these all tools would require different approaches and more broader view about there implementation, we would straight go with making core ML algorithms and document requirements and roadmap for making preprocessing engines and visualization tools.
+
+----- 
+### Refactor Log
+
+We would try to come up with unified framework for such neiche implementations
+Model object
+    - trained weights
+    - core algorithm
+
+----
+**Milestone : Validated OLS with sklearn standard with matching precission :**
+

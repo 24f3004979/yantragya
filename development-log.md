@@ -135,3 +135,5 @@ Model object
 ----
 **Milestone : Validated OLS with sklearn standard with matching precission :**
 
+Structural changes are loged into  the main module for development.
+all things clear to go with, New modules implemented into main space 👾

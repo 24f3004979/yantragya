@@ -4,3 +4,4 @@ pandas
 jupyter_client  # required dependency for my custom editor
 ipykernel  # For local setup for testing environement
 ipympl # interactive widget for notebook
+scipy

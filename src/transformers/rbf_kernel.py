@@ -19,7 +19,7 @@ class RBK:
         self.X = X
         self.n = n_component
 
-    def train(self):
+    def load(self):
         '''
         we load dataset after pair wise squaring
         then load it with kernel function of rbf 

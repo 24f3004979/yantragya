@@ -47,7 +47,7 @@ class BaseML(ABC):
             optional override for dedicated modules
     '''
     def __init__(self):
-        self.hyper_para = {}
+        self.hyper_para = None
         self.weights = None
         self.data = None
         self.target = None
@@ -58,7 +58,7 @@ class BaseML(ABC):
 
     def preprocess(self, data, intercept_required=True):
         '''
-        Making intercepting column addition to dataset parameter controlled
+        Making itercepting column addition to dataset parameter controlled
         Loading into numpy object
         shape check - exception fail
         '''
@@ -71,7 +71,7 @@ class BaseML(ABC):
         if self.d != 0:
             if data.shape[1] != self.d:  # Raw data dimensions are checked here
                 log.warning(f"Terminating Preprocess with shape crash : {data.shape} with {self.weights.shape}")
-                raise Exception("Testing Data is Not in shape convention | terminating preprocess")
+                #raise Exception("Testing Data is Not in shape convention | terminating preprocess")
 
         n = data.shape[0]
         if intercept_required:

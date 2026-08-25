@@ -5,7 +5,7 @@ Trying to break down high dimensional dataset into simpler components
 decomposing swissroll dataset :)
 '''
 from sklearn.datasets import make_swiss_roll
-from src.models.LinearRegression.KPCA import RBK
+from src.transformers.rbf_kernel import RBK
 import matplotlib.pyplot as plt
 
 X, t = make_swiss_roll(

@@ -137,3 +137,10 @@ Model object
 
 Structural changes are loged into  the main module for development.
 all things clear to go with, New modules implemented into main space 👾
+
+Made unified central structure for the Model for interritence by other modules, with dedicated loading functions and usecases, Making models development easy, 
+
+Making core ML Handle easy would make things easy to develop upon with, dedicated data loading units doesnt exists for now, 
+we could even proceed with making dedicated nromalization and inversing functions dedicated into the core ML base module with exceptions
+
+since we could make override about parameters about the root module we would need to change the core modules parameters to match tthe dedicated module needs of other impleementations

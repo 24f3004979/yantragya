@@ -14,54 +14,48 @@ class GradientDescent(BaseML):
     def __init__(self):
         super().__init__()
 
-    def train(self):
-        initiating_weight = self.preprocess(self.hyper_para['initial_weight'], intercept_required=False)
+    def train(self, err_req=True):
+        '''
+        Epotch learning update rules
+        with batch based processing to compute weights and update into gradient direction
+        '''
+        n = self.n# number of data point
+        weight = self.hyper_para['initial_weight']
+        epotches = self.hyper_para['epotches']
+        batch_size = self.hyper_para['batch_size']
 
-        X = self.data
-        y = self.target
+        err_list = [] # error listing
+        iteration = 0 # Internal Iteration count log
 
-        n = self.X.shape[0] # total data point
-        weight = initiating_weight.reshape(-1,1)  # weight vectorized
-        self.weight = weight
-
-        er = []
-        ep = []
-        iteration = 0
-
+        # Epotch Main Loop
         for epotch in range(epotches):
-
-            indices = np.arange(n)
+            indices = np.arange(n) # Index Shuffle
             np.random.shuffle(indices)
-            X_shuf = X[indices]
-            y_shuf = y[indices]
-
-
+            # Shuffle Dataset for randomized approach
+            X_shuffled = self.X[indices]
+            y_shuffled = self.y[indices]
+            
             for i in range(0, n, batch_size):
-                x = X_shuf[i: i+batch_size]
-                y = y_shuf[i: i+batch_size]
+                # Batch for both target and labels
+                x = X_shuffled[i: i+batch_size]
+                y = y_shuffled[i: i+batch_size]
 
-                print(f"Current batch size: {x.shape[0]}")
-                batch = x.shape[0]
-                pred = (x).dot(weight)
-                print(pred)
-                print(f"Predictions being zero :)")
+                pred = x.dot(weight)
                 err = (pred - y)
-                print(f"Intermediate error for intermediate prediction : {err}")
 
-                gradient = (2.0 / batch) * np.dot(x.T, err)
+                gradient = (2.0 / batch_size) * np.dot(x.T, err)
 
-                # regularization required here :)
-                print(f'gradient intermediate computation :{(eta * gradient)}')
                 weight = weight - (eta * gradient)
 
-                pred = weight.T * self.X
-                err = (np.sum((pred - y.reshape(-1,1))**2) / len(X))
+            # Global Error Analysis with current weight
+            global_pred = self.X @ weight
+            global_err = np.sum(pred - self.y ** 2) / self.n 
 
-                ep.append(iteration)
-                er.append(err)
-                print(f"Adding information for error visualization : {err} with {iteration} round")
-                iteration += 1
+            err_list.append(global_err) # Gloabl Error
 
-            print(f'Epotch : {epotch} with sse : {err}')
-        return weight, er, ep
+            print(f"Gradient Descent Iteration : {iteration} of total {epotches} with Error : {global_err}")
+            iteration += 1
 
+        self.weights = weight # Final Weight Allication with training output
+        if err_req:
+            return err_list

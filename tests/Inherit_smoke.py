@@ -2,7 +2,7 @@ from src.models.LinearRegression.GradientRegression import GradientDescent
 import pandas as pd
 
 parameters = {
-        "epotch" : 10,
+        "epotches" : 10,
         "batch_size" : 100,
         "eta" : 0.0001,
         "initial_weight" : [3,3]

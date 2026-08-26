@@ -16,6 +16,8 @@ Assumptions and Rules
 shape is considered as (n,d) for core data module
     Must be followed during loadig into the feature space
 
+BUG:There are some critical issues with the core model | Needs validation and refactor :)
+
 '''
 import numpy as np
 from src.util.logger import log

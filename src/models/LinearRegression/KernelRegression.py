@@ -7,6 +7,7 @@ from src.models.LinearRegression.GradientDescent import GradientDescent
 
 class KernelRegression(BaseML, GradientDescent):
     def __init__(self):
+        super().__init()
 
 
 

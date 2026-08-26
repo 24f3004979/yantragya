@@ -60,9 +60,4 @@ class GradientDescent:
                 iteration += 1
         
             print(f'Epotch : {epotch} with sse : {err}')
-        return weight, er, ep
-
-
-
-
-        
+        return weight, er, ep 

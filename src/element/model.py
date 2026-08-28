@@ -9,7 +9,6 @@ Functionality and usecase
 3. Overriding options for models
 4. Documented structure for easy refrences
 5. Foundational requirements
-
 ----
 Assumptions and Rules
 
@@ -17,6 +16,8 @@ shape is considered as (n,d) for core data module
     Must be followed during loadig into the feature space
 
 BUG:There are some critical issues with the core model | Needs validation and refactor :)
+
+Prediction pipeline along with structure of this core module needs a thorough inspection
 
 '''
 import numpy as np
@@ -69,11 +70,11 @@ class BaseML(ABC):
         if data.ndim == 1:
             data = data.reshape(-1,1)
         
-        # Saving to add interception into Wrong dataset 
-        if self.d != 0:
-            if data.shape[1] != self.d:  # Raw data dimensions are checked here
-                log.warning(f"Terminating Preprocess with shape crash : {data.shape} with {self.weights.shape}")
-                #raise Exception("Testing Data is Not in shape convention | terminating preprocess")
+        # # Saving to add interception into Wrong dataset 
+        # if self.d != 0:
+        #     if data.shape[1] != self.d:  # Raw data dimensions are checked here
+        #         log.warning(f"Terminating Preprocess with shape crash : {data.shape} with {self.weights.shape}")
+        #         #raise Exception("Testing Data is Not in shape convention | terminating preprocess")
 
         n = data.shape[0]
         if intercept_required:

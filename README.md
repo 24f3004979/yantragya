@@ -1,5 +1,6 @@
-![Yantragya 1.0](yantragya.png)
+# Yantragya v0.1
 Making simple Machine Learning Library to explore implementation of mathematics and programming into play.
+
 
 ## Key Features
 1. Linear Regression Module

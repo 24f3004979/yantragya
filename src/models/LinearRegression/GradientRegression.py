@@ -1,63 +1,57 @@
 '''
-Gradient Descent with Base ML
-Batch processing for finding optimal weight
+Gradient descent Model
+Inheritence of RootML class for core model handle
 '''
-from src.element.model import BaseML
+from src.element.modelv2 import RootML
 import numpy as np
 
 
-class GradientDescent(BaseML):
+class GradientDescent(RootML):
     '''
-    parameter format
-    epotch, batch_size, eta
-
+    Gradient Descent Algorithm Unit
+    After model initiation load dataset into model instance
+    hyper_parameters = {
+        eta : 0.0001, # learning rate
+        batch_size : 20, # training batch
+        initiating_weight : np.array[3,3] # must be vector with (d,1) shape
+        epotches : 20
+    }
     '''
     def __init__(self):
         super().__init__()
+        self.error_history = []  # Error History
 
-    def train(self, err_req=True):
+    def train(self):
         '''
-        Epotch learning update rules
-        with batch based processing to compute weights and update into gradient direction
+        Training logic
+            Iterating batches for dataset
+            gradient computatioon
+            recursive addition
         '''
-        n = self.n# number of data point
-        weight = np.array(self.hyper_para['initial_weight']).reshape(-1,1)
-        epotches = self.hyper_para['epotches']
-        batch_size = self.hyper_para['batch_size']
-        eta = self.hyper_para['eta']
+        # Initiating variables
+        epotches = self.hyper_parameters.get('epotches')
+        eta = self.hyper_parameters.get('eta')
+        batch_size = self.hyper_parameters.get('batch_size')
+        initiating_weight = self.hyper_parameters.get('initiating_weight')
 
-        err_list = [] # error listing
-        iteration = 0 # Internal Iteration count log
+        n,d = self.train_X.shape
+        test_n = len(self.test_X)
+        self.weights = np.array(initiating_weight).reshape(-1,1)
 
-        # Epotch Main Loop
         for epotch in range(epotches):
-            indices = np.arange(n) # Index Shuffle
-            np.random.shuffle(indices)
-            # Shuffle Dataset for randomized approach
-            X_shuffled = self.data[indices]
-            y_shuffled = self.target[indices]
-            
+
             for i in range(0, n, batch_size):
-                # Batch for both target and labels
-                x = X_shuffled[i: i+batch_size]
-                y = y_shuffled[i: i+batch_size]
+                x = self.train_X[i:i+batch_size]
+                y = self.train_y[i:i+batch_size]
 
-                pred = x.dot(weight)
-                err = (pred - y)
+                prediction = x.dot(self.weights)
+                error = (prediction - y)
 
-                gradient = (2.0 / batch_size) * np.dot(x.T, err)
+                gradient = (2/batch_size) * np.dot(x.T, error)
+                self.weights = self.weights - (eta * gradient)
 
-                weight = weight - (eta * gradient)
-
-            # Global Error Analysis with current weight
-            global_pred = self.data @ weight
-            global_err = np.sum((global_pred - self.target)**2) / self.n 
-
-            err_list.append(global_err) # Gloabl Error
-
-            print(f"Gradient Descent Iteration : {iteration} of total {epotches} with Error : {global_err}")
-            iteration += 1
-
-        self.weights = weight # Final Weight Allication with training output
-        if err_req:
-            return err_list
+            # Epotch directional testing plugin
+            global_prediction = self.predict(self.test_X)
+            global_error = (np.sum((global_prediction - self.test_y)**2) / test_n)
+            self.error_history.append(global_error)
+            print(f"Epotch :{epotch} with Erorr : {global_error}")

@@ -11,7 +11,7 @@ class GradientDescent:
         self.X = np.hstack([ones_column, X])
         self.y = y.reshape(-1,1)
 
-            
+    
     def train(self, initiating_weight, epotches=10, batch_size=100, eta=0.0001):
         '''
         Training Prediction with batch based approach

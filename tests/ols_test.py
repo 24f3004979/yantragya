@@ -10,7 +10,7 @@ from src.util.basic_utility import *
 # 1. Import scikit-learn's LinearRegression
 from sklearn.linear_model import LinearRegression
 
-df = pd.read_csv('/home/madhav/workspace/projects/yantragya/cleaned_clean_data.csv')
+df = pd.read_csv('/home/madhav/workspace/projects/yantragya/data/cleaned_clean_data.csv')
 
 # Spliting Dataset for testing | 80-20
 cutoff = int(len(df) * 0.8)

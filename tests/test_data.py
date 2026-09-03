@@ -13,7 +13,7 @@ from src.util.basic_utility import *
 
 #df = pd.read_csv("/home/madhav/workspace/projects/yantragya/tests/needs_normalization.csv")
 
-df = pd.read_csv('/home/madhav/workspace/projects/yantragya/cleaned_clean_data.csv')
+df = pd.read_csv('/home/madhav/workspace/projects/yantragya/data/cleaned_clean_data.csv')
 
 # Normalization | Transformation
 '''

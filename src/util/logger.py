@@ -6,7 +6,8 @@ logging.basicConfig(
         filemode='a',
         level=logging.DEBUG,
         format="%(asctime)s - %(levelname)s - %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S"
+        datefmt="%Y-%m-%d %H:%M:%S",
+        force=True
         )
 
 log = logging.getLogger(__name__)

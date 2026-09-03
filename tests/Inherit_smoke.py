@@ -6,7 +6,7 @@ parameters = {
         "epotches" : 10,
         "batch_size" : 100,
         "eta" : 0.0001,
-        "initial_weight" : [3,3]
+        "initiating_weight" : [3,3]
         }
 
 df = pd.read_csv('/home/madhav/workspace/projects/yantragya/cleaned_clean_data.csv')
@@ -19,7 +19,7 @@ y = df['y']
 
 Gradient_Unit.load(X, y, parameters)
 
-err_list = Gradient_Unit.train(err_req=True) # Inheritense final testing
+err_list = Gradient_Unit.train() # Inheritense final testing
 
 iterations = range(0,parameters['epotches'])
 

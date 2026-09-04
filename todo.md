@@ -1,22 +1,12 @@
 # TODO
+1. Project Needs goal
+    What we would solve with this ?
+    what is requirements
 
-1. Documenting and structuring BaseML object
-    Most required for building other models
-    Needs to be defined well such that other definitions could also flow good.
+2. Project alignment with goal is must requried
+    to define and go with great power to complete the project
 
-    documented and well planned tested module required
-    base foundational module which would be used for  other elements
+    make it working an shine into its own space
 
-2. Kernelized Linear Regression Imlementation
-3. statistical Modeling unit
-    Base Engine for making data fit for given dataset into required modeling
-    approach for making models for given probabilistic models and statistical approach with dataset
-    + Byesian approach
-    + Gausian Modeling
-
-4. Classification models
-
-
-## Planned work 
-+ classification models
-+ statistical tools plugin
+3. With project purpose -> Build requirement for first release
+    Making it into public access for  there usecase

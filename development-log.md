@@ -155,3 +155,11 @@ Since the direction about the project is about to learn machine learning,Make it
 Load this repository into a repo of usefull elements to use with web interface for building actual models and import those models file with interpret code module to load the model and get predictions
 
 Making machine learning foundational implementation from scratch to define the surface level for the given scoope of problem
+
+PROJECT NEEDS DIRECTION TO FOLLOW
+    WE NEED TO DECIEDE WHAT THIS PROJECT IS MEANT TO BECOME IN FUTURE ?
+    WHAT IS THE PURPOSE OF MAKING THIS
+    WHAT ARE THE REQUIREMENTS ABOUT MAKING THIS ?
+    LOCK FEATURES
+
+    EXPRIMENT - EXPLORE - FAIL - BUILD

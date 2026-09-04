@@ -144,3 +144,14 @@ Making core ML Handle easy would make things easy to develop upon with, dedicate
 we could even proceed with making dedicated nromalization and inversing functions dedicated into the core ML base module with exceptions
 
 since we could make override about parameters about the root module we would need to change the core modules parameters to match tthe dedicated module needs of other impleementations
+
+----
+
+Orientation towards implementing things into strcutured format for shipping this respository into a actual usable release is must requirement
+Shipping first foundational working good model building unit is must requried for the first version
+
+Since the direction about the project is about to learn machine learning,Make it easy for others to learn with, thus we would try to launch a visual editor tool for people to tweak things visually to build whole ML pipeline for there purpose.
+
+Load this repository into a repo of usefull elements to use with web interface for building actual models and import those models file with interpret code module to load the model and get predictions
+
+Making machine learning foundational implementation from scratch to define the surface level for the given scoope of problem

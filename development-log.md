@@ -163,3 +163,6 @@ PROJECT NEEDS DIRECTION TO FOLLOW
     LOCK FEATURES
 
     EXPRIMENT - EXPLORE - FAIL - BUILD
+
+
+With some standard development to package existing code base we pause with this library for now for yantragya

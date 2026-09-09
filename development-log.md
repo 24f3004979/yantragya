@@ -164,5 +164,18 @@ PROJECT NEEDS DIRECTION TO FOLLOW
 
     EXPRIMENT - EXPLORE - FAIL - BUILD
 
+----
 
-With some standard development to package existing code base we pause with this library for now for yantragya
+## Clarity
+
+This project is made for sole purpose of learning about machine learning with hands on with algorihtms, dedicated slots to craft new ways or explore different compositions, crafting usefull dedicated tools to test out with public open use cases and learning machine learning the better way.
+
+Core philosophical direction is totally learning about machine learning to a good satisfactory depth with blend of mathematics and coding based implementations and composed craft of different nodes of this domain.
+
+Composed special algorithm or pipeline would be even shared with people, with repository having good documentation about each implementation this could evovlve to serve those documentation for student community to learn more about machine learning in better hands on approach.
+
+With dedicated fundamental goals with project to initiate a working structural flow with each component is must required through out, initiating withh simple implementation of root model class, crafting simple interlocked synced components
+
+crafting good exploratory notebooks with experiments with topics and exploration insctinct with demostration notebook for fundamental sources.
+
+A simple web interface with interactive ml development is long term vision with yantragya core foundations being built upon :)
